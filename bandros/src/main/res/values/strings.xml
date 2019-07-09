@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">B-Lib</string>
+    <string name="blib_form_is_empty">%1$s empty.</string>
+    <string name="blib_form_email_invalid">%1$s invalid.</string>
+    <string name="blib_form_min_length">%1$s length min %2$s character.</string>
+    <string name="blib_form_max_length">%1$s length max %2$s character.</string>
+    <string name="blib_form_conf">%1$s confirmation not match.</string>
+</resources>

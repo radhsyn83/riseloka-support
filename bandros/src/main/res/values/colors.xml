@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bsnackbar_success">#23B9A9</color>
+    <color name="bsnackbar_info">#4AA9E9</color>
+    <color name="bsnackbar_primary">#62549a</color>
+    <color name="bsnackbar_warning">#EAC459</color>
+    <color name="bsnackbar_danger">#FF6C60</color>
+    <color name="bsnackbar_black">#000000</color>
+</resources>
