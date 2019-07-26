@@ -32,7 +32,7 @@ object BMoney {
         return formatter.format(parseDouble(value)).replace(",".toRegex(), ".")
     }
 
-    fun textWatcher(context: Context, editText: EditText) : TextWatcher {
+    fun numberFormatWatcher(context: Context, editText: EditText) : TextWatcher {
         return object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 editText.removeTextChangedListener(this)
@@ -63,5 +63,9 @@ object BMoney {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         }
+    }
+
+    fun numberFormatToString(numberFormat: String) : String {
+        return numberFormat.replace(",".toRegex(), "")
     }
 }
