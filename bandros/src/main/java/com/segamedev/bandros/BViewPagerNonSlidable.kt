@@ -31,6 +31,14 @@ class BViewPagerNonSlidable : ViewPager {
         return false
     }
 
+    override fun setCurrentItem(item: Int, smoothScroll: Boolean) {
+        super.setCurrentItem(item, false)
+    }
+
+    override fun setCurrentItem(item: Int) {
+        super.setCurrentItem(item, false)
+    }
+
     //down one is added for smooth scrolling
 
     fun setMyScroller() {
