@@ -7,8 +7,6 @@ import android.view.MotionEvent
 import android.view.animation.DecelerateInterpolator
 import android.widget.Scroller
 
-import java.lang.reflect.Field
-
 //
 // Created by Fathur Radhy
 // on June 2019-06-14.

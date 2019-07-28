@@ -14,12 +14,23 @@ import java.util.*
 // on July 2019-07-08.
 //
 object BMoney {
+
+    /**
+     * Shows a title, or header, at the top of the dialog.
+     *
+     * @param value ex: 100000 will return Rp10.000
+     */
     fun toRupiah(value: String): String {
         return "Rp" + DecimalFormat("#,###,###")
             .format(parseDouble(value))
             .replace(",".toRegex(), ".")
     }
 
+    /**
+     * Shows a title, or header, at the top of the dialog.
+     *
+     * @param value ex: 100000 will return Rp10rb
+     */
     fun toRupiahRibuan(value: String): String {
         val nom = (value.toInt() / 1000).toString()
         val formatter = DecimalFormat("#,###,###")
@@ -27,11 +38,21 @@ object BMoney {
         return "Rp " + converted + "rb"
     }
 
+    /**
+     * Shows a title, or header, at the top of the dialog.
+     *
+     * @param value ex: 100000 will return 10.0000
+     */
     fun normal(value: String): String {
         val formatter = DecimalFormat("#,###,###")
         return formatter.format(parseDouble(value)).replace(",".toRegex(), ".")
     }
 
+    /**
+     * Shows a title, or header, at the top of the dialog.
+     *
+     * auto convert to money format on EditText
+     */
     fun numberFormatWatcher(context: Context, editText: EditText) : TextWatcher {
         return object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -65,6 +86,11 @@ object BMoney {
         }
     }
 
+    /**
+     * Shows a title, or header, at the top of the dialog.
+     *
+     * @param numberFormat from 10,000 will return 100000
+     */
     fun numberFormatToString(numberFormat: String) : String {
         return numberFormat.replace(",".toRegex(), "")
     }

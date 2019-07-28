@@ -13,6 +13,11 @@ import java.util.*
 //
 @SuppressLint("SimpleDateFormat")
 object BDate {
+    /**
+     * Shows a title, or header, at the top of the dialog.
+     *
+     * @param time Date format must be "yyyy-MM-dd HH:mm:ss"
+     */
     fun dateFormat(time: String): String {
         var dateTime: Date? = null
         try {
@@ -26,6 +31,11 @@ object BDate {
         ) + " WIB"
     }
 
+    /**
+     * Shows a title, or header, at the top of the dialog.
+     *
+     * @param time Date format must be "yyyy-MM-dd HH:mm:ss"
+     */
     fun dateFormatCustom(time: String): String {
         var dateTime: Date? = null
         var dateTime2: Date? = null

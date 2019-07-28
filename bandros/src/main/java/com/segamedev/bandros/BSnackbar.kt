@@ -16,47 +16,84 @@ import android.widget.TextView
 // Created by Fathur Radhy 
 // on July 2019-07-08.
 //
-class BSnackbar(val mContext: Context) {
 
-    fun primary(text: String, length: Int = Snackbar.LENGTH_SHORT) {
-        custom(text, bgColor = R.color.bsnackbar_primary, lenght = length)
+class BSnackbar(private val mContext: Context) {
+
+    /**
+     * Shows a title, or header, at the top of the dialog.
+     *
+     * @param textResource The string resource to display as the title.
+     * @param length Snackbar.LENGTH_SHORT or Snackbar.LENGTH_LONG or Snackbar.LENGTH_INDEFINITE
+     */
+    fun primary(textResource: Int, length: Int = Snackbar.LENGTH_SHORT) {
+        custom(textResource, bgColor = R.color.bsnackbar_primary, length = length)
     }
 
-    fun success(text: String, length: Int = Snackbar.LENGTH_SHORT) {
-        custom(text, bgColor = R.color.bsnackbar_success, lenght = length)
+    /**
+     * Shows a title, or header, at the top of the dialog.
+     *
+     * @param textResource The string resource to display as the title.
+     * @param length Snackbar.LENGTH_SHORT or Snackbar.LENGTH_LONG or Snackbar.LENGTH_INDEFINITE
+     */
+    fun success(textResource: Int, length: Int = Snackbar.LENGTH_SHORT) {
+        custom(textResource, bgColor = R.color.bsnackbar_success, length = length)
     }
 
-    fun info(text: String, length: Int = Snackbar.LENGTH_SHORT) {
-        custom(text, bgColor = R.color.bsnackbar_info, lenght = length)
+    /**
+     * Shows a title, or header, at the top of the dialog.
+     *
+     * @param textResource The string resource to display as the title.
+     * @param length Snackbar.LENGTH_SHORT or Snackbar.LENGTH_LONG or Snackbar.LENGTH_INDEFINITE
+     */
+    fun info(textResource: Int, length: Int = Snackbar.LENGTH_SHORT) {
+        custom(textResource, bgColor = R.color.bsnackbar_info, length = length)
     }
 
-    fun warning(text: String, length: Int = Snackbar.LENGTH_SHORT) {
-        custom(text, bgColor = R.color.bsnackbar_warning, lenght = length)
+    /**
+     * Shows a title, or header, at the top of the dialog.
+     *
+     * @param textResource The string resource to display as the title.
+     * @param length Snackbar.LENGTH_SHORT or Snackbar.LENGTH_LONG or Snackbar.LENGTH_INDEFINITE
+     */
+    fun warning(textResource: Int, length: Int = Snackbar.LENGTH_SHORT) {
+        custom(textResource, bgColor = R.color.bsnackbar_warning, length = length)
     }
 
-    fun danger(text: String, length: Int = Snackbar.LENGTH_SHORT) {
-        custom(text, bgColor = R.color.bsnackbar_danger, lenght = length)
+    /**
+     * Shows a title, or header, at the top of the dialog.
+     *
+     * @param textResource The string resource to display as the title.
+     * @param length Snackbar.LENGTH_SHORT or Snackbar.LENGTH_LONG or Snackbar.LENGTH_INDEFINITE
+     */
+    fun danger(textResource: Int, length: Int = Snackbar.LENGTH_SHORT) {
+        custom(textResource, bgColor = R.color.bsnackbar_danger, length = length)
     }
 
-    fun custom(text: String,
-              icon: Int = R.drawable.bsnackbar_icon,
-              iconColor: Int? = null,
-              bgColor: Int = R.color.bsnackbar_info,
-              textColor: Int = android.R.color.white,
-              lenght: Int = Snackbar.LENGTH_SHORT)
+    /**
+     * Shows a title, or header, at the top of the dialog.
+     *
+     * @param textResource The string resource to display as the title.
+     * @param length Snackbar.LENGTH_SHORT or Snackbar.LENGTH_LONG or Snackbar.LENGTH_INDEFINITE
+     */
+    fun custom(textResource: Int,
+               icon: Int = R.drawable.bsnackbar_icon,
+               iconColor: Int? = null,
+               bgColor: Int = R.color.bsnackbar_info,
+               textColor: Int = android.R.color.white,
+               length: Int = Snackbar.LENGTH_SHORT)
     {
         val rootView = (mContext as Activity)
             .window.decorView.findViewById<View>(android.R.id.content)
 
-        val snackbar = Snackbar.make(rootView, "", lenght)
-        snackbar.view.setBackgroundColor(Color.TRANSPARENT)
+        val snackBar = Snackbar.make(rootView, "", length)
+        snackBar.view.setBackgroundColor(Color.TRANSPARENT)
 
         //inflate view
         val customView = mContext.layoutInflater.inflate(R.layout.snackbar_custom, null)
-        val snackBarView = snackbar.view as Snackbar.SnackbarLayout
+        val snackBarView = snackBar.view as Snackbar.SnackbarLayout
         snackBarView.setPadding(0, 0, 0, 0)
 
-        customView.findViewById<TextView>(R.id.message).text = text
+        customView.findViewById<TextView>(R.id.message).text = mContext.getString(textResource)
         customView.findViewById<TextView>(R.id.message)
             .setTextColor(ContextCompat.getColor(mContext, textColor))
         customView.findViewById<ImageView>(R.id.icon).setImageResource(icon)
@@ -68,7 +105,7 @@ class BSnackbar(val mContext: Context) {
                 customView.findViewById<ImageView>(R.id.icon),
                 ColorStateList.valueOf(iconColor))
         }
-        snackbar.show()
+        snackBar.show()
     }
 
 }

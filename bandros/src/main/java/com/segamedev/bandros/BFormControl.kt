@@ -3,8 +3,7 @@ package com.segamedev.bandros
 import android.content.Context
 import android.text.TextUtils
 import android.util.Log
-
-import java.util.ArrayList
+import java.util.*
 
 //
 // Created by Fathur Radhy
