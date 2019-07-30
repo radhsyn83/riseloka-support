@@ -25,14 +25,16 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 
 /**
  * A subclass of {@link View} class for creating a custom circular progressBar
  *
- * Created by Pedram on 2015-01-06.
  */
-public class CircleProgressBar extends View {
+public class BCircleProgressBar extends View {
 
 
     /**
@@ -42,11 +44,13 @@ public class CircleProgressBar extends View {
     private float progress = 0;
     private int min = 0;
     private int max = 100;
+    private Boolean rotate = true;
     /**
      * Start the progress at 12 o'clock
      */
     private int startAngle = -90;
-    private int color = Color.DKGRAY;
+    private int strokeColor = Color.DKGRAY;
+    private int progressColor = Color.DKGRAY;
     private RectF rectF;
     private Paint backgroundPaint;
     private Paint foregroundPaint;
@@ -90,19 +94,30 @@ public class CircleProgressBar extends View {
         invalidate();
     }
 
-    public int getColor() {
-        return color;
+    public int getStrokeColor() {
+        return strokeColor;
     }
 
-    public void setColor(int color) {
-        this.color = color;
-        backgroundPaint.setColor(adjustAlpha(color, 0.3f));
+    public int getProgressColor() {
+        return strokeColor;
+    }
+
+    public void setStrokeColor(int color) {
+        this.strokeColor = color;
+        backgroundPaint.setColor(color);
         foregroundPaint.setColor(color);
         invalidate();
         requestLayout();
     }
 
-    public CircleProgressBar(Context context, AttributeSet attrs) {
+    public void setProgressColor(int color) {
+        this.progressColor = color;
+        foregroundPaint.setColor(color);
+        invalidate();
+        requestLayout();
+    }
+
+    public BCircleProgressBar(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
@@ -111,26 +126,31 @@ public class CircleProgressBar extends View {
         rectF = new RectF();
         TypedArray typedArray = context.getTheme().obtainStyledAttributes(
                 attrs,
-                R.styleable.CircleProgressBar,
+                R.styleable.BCircleProgressBar,
                 0, 0);
         //Reading values from the XML layout
         try {
-            strokeWidth = typedArray.getDimension(R.styleable.CircleProgressBar_progressBarThickness, strokeWidth);
-            progress = typedArray.getFloat(R.styleable.CircleProgressBar_progress, progress);
-            color = typedArray.getInt(R.styleable.CircleProgressBar_progressbarColor, color);
-            min = typedArray.getInt(R.styleable.CircleProgressBar_min, min);
-            max = typedArray.getInt(R.styleable.CircleProgressBar_max, max);
+            strokeWidth = typedArray.getDimension(R.styleable.BCircleProgressBar_cpb_progressBarThickness, strokeWidth);
+            progress = typedArray.getFloat(R.styleable.BCircleProgressBar_cpb_progress, progress);
+            progressColor = typedArray.getInt(R.styleable.BCircleProgressBar_cpb_progressColor, progressColor);
+            strokeColor = typedArray.getInt(R.styleable.BCircleProgressBar_cpb_strokeColor, strokeColor);
+            min = typedArray.getInt(R.styleable.BCircleProgressBar_cpb_min, min);
+            max = typedArray.getInt(R.styleable.BCircleProgressBar_cpb_max, max);
+            rotate = typedArray.getBoolean(R.styleable.BCircleProgressBar_cpb_rotateAnimation, rotate);
+
+            setRotate(rotate);
+
         } finally {
             typedArray.recycle();
         }
 
         backgroundPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        backgroundPaint.setColor(adjustAlpha(color, 0.3f));
+        backgroundPaint.setColor(strokeColor);
         backgroundPaint.setStyle(Paint.Style.STROKE);
         backgroundPaint.setStrokeWidth(strokeWidth);
 
         foregroundPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        foregroundPaint.setColor(color);
+        foregroundPaint.setColor(progressColor);
         foregroundPaint.setStyle(Paint.Style.STROKE);
         foregroundPaint.setStrokeWidth(strokeWidth);
     }
@@ -192,7 +212,7 @@ public class CircleProgressBar extends View {
     /**
      * Set the progress with an animation.
      * Note that the {@link ObjectAnimator} Class automatically set the progress
-     * so don't call the {@link CircleProgressBar#setProgress(float)} directly within this method.
+     * so don't call the {@link BCircleProgressBar#setProgress(float)} directly within this method.
      *
      * @param progress The progress it should animate to it.
      */
@@ -202,6 +222,28 @@ public class CircleProgressBar extends View {
         objectAnimator.setDuration(1500);
         objectAnimator.setInterpolator(new DecelerateInterpolator());
         objectAnimator.start();
+    }
+
+    public  void setRotate(Boolean isRotate) {
+        if (isRotate)
+            startAnimation(rotateAnimation());
+        else
+            clearAnimation();
+    }
+
+    private RotateAnimation rotateAnimation(){
+        RotateAnimation rotate = new RotateAnimation(
+                0f,
+                360f,
+                Animation.RELATIVE_TO_SELF,
+                0.5f,
+                Animation.RELATIVE_TO_SELF,
+                0.5f
+        );
+        rotate.setDuration(2000);
+        rotate.setRepeatCount(RotateAnimation.INFINITE);
+        rotate.setInterpolator(new LinearInterpolator());
+        return rotate;
     }
 }
 

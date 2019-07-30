@@ -15,13 +15,15 @@
   -->
 
 <resources>
-    <declare-styleable name="CircleProgressBar">
-        <attr name="min" format="integer" />
-        <attr name="max" format="integer" />
-        <attr name="progress" format="integer" />
-        <attr name="progressbarColor" format="color" />
-        <attr name="progressBarThickness" format="dimension" />
 
+    <declare-styleable name="BCircleProgressBar">
+        <attr name="cpb_min" format="integer" />
+        <attr name="cpb_max" format="integer" />
+        <attr name="cpb_progress" format="integer" />
+        <attr name="cpb_progressColor" format="color" />
+        <attr name="cpb_strokeColor" format="color" />
+        <attr name="cpb_rotateAnimation" format="boolean" />
+        <attr name="cpb_progressBarThickness" format="dimension" />
     </declare-styleable>
 
 </resources>
