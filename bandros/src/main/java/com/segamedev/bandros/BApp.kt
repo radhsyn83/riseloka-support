@@ -16,6 +16,12 @@ object BApp {
         imm.hideSoftInputFromWindow(rootView.windowToken, 0)
     }
 
+    fun intToFloat(intVal: Int): Float {
+        var floatVal = 0.0f
+        floatVal = 1f * intVal
+        return floatVal
+    }
+
     /**
      * Shows a title, or header, at the top of the dialog.
      *
