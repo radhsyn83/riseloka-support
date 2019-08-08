@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">B-Lib</string>
     <string name="blib_form_conf">%1$s konfirmasi tidak cocok.</string>
     <string name="blib_form_email_invalid">%1$s tidak valid.</string>
     <string name="blib_form_is_empty">%1$s tidak boleh kosong.</string>
