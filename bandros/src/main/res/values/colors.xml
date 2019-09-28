@@ -6,4 +6,5 @@
     <color name="bsnackbar_warning">#EAC459</color>
     <color name="bsnackbar_danger">#FF6C60</color>
     <color name="bsnackbar_black">#000000</color>
+    <color name="bandros_formname_default_color">#4AA9E9</color>
 </resources>

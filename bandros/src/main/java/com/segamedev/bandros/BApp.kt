@@ -44,4 +44,25 @@ object BApp {
             activity.window.decorView.systemUiVisibility = flags
         }
     }
+
+    /**
+     * Shows a title, or header, at the top of the dialog.
+     *
+     * @param input String.
+     * conver 'DATA MAHASISWA' or 'data mahasiswa' = 'Data Mahasiswa'
+     */
+    private fun textCapsSentence(input: String?): String {
+        if (input == null || input.isEmpty()) {
+            return "-"
+        }
+
+        val texts = input.split(" ")
+        var text = ""
+
+        texts.forEach { s ->
+            text += s.toLowerCase().capitalize() + " "
+        }
+
+        return text.trim()
+    }
 }

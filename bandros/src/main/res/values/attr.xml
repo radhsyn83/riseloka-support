@@ -26,4 +26,17 @@
         <attr name="cpb_progressBarThickness" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="BFormInputText">
+        <attr name="b_formName" format="string" />
+        <attr name="b_formNameColor" format="color" />
+        <attr name="b_formHint" format="string" />
+        <attr name="b_formHintColor" format="color" />
+        <attr name="b_leftButtonShow" format="boolean" />
+        <attr name="b_leftButtonIcon" format="reference" />
+        <attr name="b_leftButtonIconTint" format="reference" />
+        <attr name="b_rightButtonShow" format="boolean" />
+        <attr name="b_rightButtonIcon" format="color" />
+        <attr name="b_rightButtonIconTint" format="color" />
+    </declare-styleable>
+
 </resources>
