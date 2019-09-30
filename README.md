@@ -81,18 +81,20 @@ BFormControl().init(ctx)
     app:b_formNameColor="@color/colorAccent"
     app:b_formHintColor="@android:color/darker_gray"/>
 ```
+
 You must use the following properties in your XML to change your CircularImageView.
-| Properties  | Type | Default |
-| ------------- | ------------- | ------------- |
-| app:b_formName | string | Form Name |
-| app:b_formNameColor | color | #4aa9e9 |
-| app:b_formHint  | string | Form Hint |
-| app:b_formHintColor | color | #ccc |
-| app:b_leftButtonShow | boolean | false |
-| app:b_leftButtonIcon | drawable |  |
-| app:b_leftButtonIconTint | color | #000 |
-| app:b_rightButtonShow | boolean | false |
-| app:b_rightButtonIcon | drawable |  |
-| app:b_rightButtonIconTint | color | #000 |
-| app:b_formReadOnly | boolean | false |
-| app:b_formInputType | text, phone, email, textarea | text |
+
+| Properties                   | Type                         | Default   |
+| ---------------------------- | ---------------------------- | --------- |
+| `app:b_formName`             | string                       | Form Name |
+| `app:b_formNameColor`        | color                        | #4aa9e9   |
+| `app:b_formHint`             | string                       | Form Hint |
+| `app:b_formHintColor`        | color                        | #ccc      |
+| `app:b_leftButtonShow`       | boolean                      | false     |
+| `app:b_leftButtonIcon`       | drawable                     | s         |
+| `app:b_leftButtonIconTint`   | color                        | #000      |
+| `app:b_rightButtonShow`      | boolean                      | false     |
+| `app:b_rightButtonIcon`      | drawable                     | s         |
+| `app:b_rightButtonIconTint`  | color                        | #000      |
+| `app:b_formReadOnly`         | boolean                      | false     |
+| `app:b_formInputType`        | text, phone, email, textarea | text      |
