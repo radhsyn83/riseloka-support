@@ -98,3 +98,14 @@ You must use the following properties in your XML to change your CircularImageVi
 | `app:b_rightButtonIconTint`  | color                        | #000      |
 | `app:b_formReadOnly`         | boolean                      | false     |
 | `app:b_formInputType`        | text, phone, email, textarea | text      |
+
+# OnClickListener
+```java
+formInput.onLeftButtonClick {
+    Toast.makeText(this, "Left Button clicked", Toast.LENGTH_LONG).show()
+}
+
+formInput.onRightButtonClick {
+    Toast.makeText(this, "Right Button clicked", Toast.LENGTH_LONG).show()
+}
+```
