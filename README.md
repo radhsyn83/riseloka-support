@@ -68,6 +68,7 @@ BFormControl().init(ctx)
 
 
 # #Composite Form
+![Image](https://github.com/radhsyn83/bandros-lib/blob/master/images/Example%20composite%20Form.png)
 
 ```java
 <com.segamedev.bandros.BFormInputText
@@ -108,4 +109,15 @@ formInput.onLeftButtonClick {
 formInput.onRightButtonClick {
     Toast.makeText(this, "Right Button clicked", Toast.LENGTH_LONG).show()
 }
+```
+# Get Form title and Form input
+```java
+//Get Form Text
+val text: String = formInput.getText()
+
+//Form Input
+val fInput: EditText = formInput.getFormInput()
+
+//Form Title
+val fTitle: TextView = formInput.getFormTitle()
 ```
