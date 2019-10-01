@@ -37,6 +37,13 @@
         <attr name="b_rightButtonShow" format="boolean" />
         <attr name="b_rightButtonIcon" format="color" />
         <attr name="b_rightButtonIconTint" format="color" />
+        <attr name="b_formReadOnly" format="boolean" />
+        <attr name="b_formInputType">
+            <flag name="text" value="0" />
+            <flag name="phone" value="1" />
+            <flag name="email" value="2" />
+            <flag name="textArea" value="3" />
+        </attr>
     </declare-styleable>
 
 </resources>

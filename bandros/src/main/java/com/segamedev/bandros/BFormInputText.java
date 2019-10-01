@@ -24,13 +24,14 @@ public class BFormInputText extends LinearLayout {
     ImageView ivLeftButton, ivRightButton;
     String mFormName;
     String mFormHint;
+    String mFormInputType;
     int mFormNameColor = NOT_DEFINED;
     int mFormHintColor = NOT_DEFINED;
     int mLeftButtonIcon = NOT_DEFINED;
     int mRightButtonIcon = NOT_DEFINED;
     int mLeftButtonIconTint = NOT_DEFINED;
     int mRightButtonIconTint = NOT_DEFINED;
-    Boolean mShowLeftButton, mShowRightButton;
+    Boolean mShowLeftButton, mShowRightButton, mFormReadOnly;
     private Context mContext;
 
     public BFormInputText(Context context) {
@@ -70,6 +71,8 @@ public class BFormInputText extends LinearLayout {
             mRightButtonIcon = typedArray.getResourceId(com.segamedev.bandros.R.styleable.BFormInputText_b_rightButtonIcon, com.segamedev.bandros.R.drawable.bform_default_button_icon);
             mLeftButtonIconTint = typedArray.getColor(com.segamedev.bandros.R.styleable.BFormInputText_b_leftButtonIconTint, NOT_DEFINED);
             mRightButtonIconTint = typedArray.getColor(com.segamedev.bandros.R.styleable.BFormInputText_b_rightButtonIconTint, NOT_DEFINED);
+            mFormReadOnly = typedArray.getBoolean(R.styleable.BFormInputText_b_formReadOnly, true);
+            mFormInputType = typedArray.getString(R.styleable.BFormInputText_b_formInputType);
 
             typedArray.recycle();
         }
@@ -91,6 +94,9 @@ public class BFormInputText extends LinearLayout {
         else
             tvFormName.setText("Form Name");
         setFormNameColor(mFormNameColor);
+
+        //Edittext
+        setFormReadOnly(mFormReadOnly);
 
         //Set Form Hint
         if (mFormHint != null)
@@ -154,6 +160,10 @@ public class BFormInputText extends LinearLayout {
         if (ivLeftButton != null) {
             ivRightButton.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
         }
+    }
+
+    public void setFormReadOnly(Boolean isEnable) {
+        etFormInput.setEnabled(isEnable);
     }
 
     public void setRightButtonIconTint(int color) {
