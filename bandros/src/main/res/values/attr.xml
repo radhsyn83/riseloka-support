@@ -31,11 +31,12 @@
         <attr name="b_formNameColor" format="color" />
         <attr name="b_formHint" format="string" />
         <attr name="b_formHintColor" format="color" />
+        <attr name="text" format="string" />
         <attr name="b_leftButtonShow" format="boolean" />
         <attr name="b_leftButtonIcon" format="reference" />
-        <attr name="b_leftButtonIconTint" format="reference" />
+        <attr name="b_leftButtonIconTint" format="color" />
         <attr name="b_rightButtonShow" format="boolean" />
-        <attr name="b_rightButtonIcon" format="color" />
+        <attr name="b_rightButtonIcon" format="reference" />
         <attr name="b_rightButtonIconTint" format="color" />
         <attr name="b_formReadOnly" format="boolean" />
         <attr name="b_formInputType">

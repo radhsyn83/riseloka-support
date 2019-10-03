@@ -25,6 +25,7 @@ public class BFormInputText extends LinearLayout {
     String mFormName;
     String mFormHint;
     String mFormInputType;
+    String mText = "";
     int mFormNameColor = NOT_DEFINED;
     int mFormHintColor = NOT_DEFINED;
     int mLeftButtonIcon = NOT_DEFINED;
@@ -65,6 +66,7 @@ public class BFormInputText extends LinearLayout {
             mFormHint = typedArray.getString(com.segamedev.bandros.R.styleable.BFormInputText_b_formHint);
             mFormNameColor = typedArray.getColor(com.segamedev.bandros.R.styleable.BFormInputText_b_formNameColor, getResources().getColor(com.segamedev.bandros.R.color.bandros_formname_default_color));
             mFormHintColor = typedArray.getColor(com.segamedev.bandros.R.styleable.BFormInputText_b_formHintColor, NOT_DEFINED);
+            mText = typedArray.getString(com.segamedev.bandros.R.styleable.BFormInputText_text);
             mShowRightButton = typedArray.getBoolean(com.segamedev.bandros.R.styleable.BFormInputText_b_rightButtonShow, false);
             mShowLeftButton = typedArray.getBoolean(com.segamedev.bandros.R.styleable.BFormInputText_b_leftButtonShow, false);
             mLeftButtonIcon = typedArray.getResourceId(com.segamedev.bandros.R.styleable.BFormInputText_b_leftButtonIcon, com.segamedev.bandros.R.drawable.bform_default_button_icon);
@@ -97,6 +99,8 @@ public class BFormInputText extends LinearLayout {
 
         //Edittext
         setFormReadOnly(mFormReadOnly);
+        //Set Form Text
+        etFormInput.setText(mText);
 
         //Set Form Hint
         if (mFormHint != null)

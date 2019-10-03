@@ -15,6 +15,7 @@
             android:id="@+id/formInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:text="asdasd"
             app:b_formHint="Masukkan nomor hp"
             app:b_formName="No. HP"
             app:b_formHintColor="@android:color/darker_gray"
