@@ -44,6 +44,7 @@
             <flag name="phone" value="1" />
             <flag name="email" value="2" />
             <flag name="textArea" value="3" />
+            <flag name="password" value="4" />
         </attr>
     </declare-styleable>
 

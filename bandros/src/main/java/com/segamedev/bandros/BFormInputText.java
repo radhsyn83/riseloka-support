@@ -3,6 +3,8 @@ package com.segamedev.bandros;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
+import android.text.InputType;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -118,6 +120,36 @@ public class BFormInputText extends LinearLayout {
         showRightButton(mShowRightButton);
         setRightButtonIcon(mRightButtonIcon);
         if (mRightButtonIconTint != NOT_DEFINED) setRightButtonIconTint(mRightButtonIcon);
+
+        //Set Form Type
+        if (mFormInputType == null) mFormInputType = "0";
+        setInputType(mFormInputType);
+    }
+
+    public void setTextArea() {
+        etFormInput.setMaxLines(3);
+        etFormInput.setEllipsize(TextUtils.TruncateAt.END);
+    }
+
+    public void setInputType(String inputType) {
+
+        switch (inputType) {
+            case "0x1":
+                etFormInput.setInputType(InputType.TYPE_CLASS_NUMBER);
+                break;
+            case "0x2":
+                etFormInput.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+                break;
+            case "0x3":
+                setTextArea();
+                break;
+            case "0x4":
+                etFormInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                break;
+            default:
+                etFormInput.setInputType(InputType.TYPE_TEXT_FLAG_CAP_WORDS);
+                break;
+        }
     }
 
     public void setFormNameColor(int color) {

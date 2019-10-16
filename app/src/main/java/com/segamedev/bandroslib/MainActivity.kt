@@ -2,8 +2,6 @@ package com.segamedev.bandroslib
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,13 +9,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        formInput.onLeftButtonClick {
-            Toast.makeText(this, "Left clicked", Toast.LENGTH_LONG).show()
-        }
+//        phone.formInput.inputType = InputType.TYPE_CLASS_NUMBER
 
-        formInput.onRightButtonClick {
-            Toast.makeText(this, "Right clicked", Toast.LENGTH_LONG).show()
-        }
 
     }
 }

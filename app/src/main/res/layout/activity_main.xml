@@ -12,16 +12,58 @@
         android:orientation="vertical">
 
         <com.segamedev.bandros.BFormInputText
-            android:id="@+id/formInput"
+            android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:text="asdasd"
             app:b_formHint="Masukkan nomor hp"
             app:b_formName="No. HP"
+            app:b_formInputType="phone"
             app:b_formHintColor="@android:color/darker_gray"
             app:b_formNameColor="@color/colorAccent"
             app:b_leftButtonShow="false"
-            app:b_formReadOnly="false"
+            app:b_rightButtonShow="true" />
+
+        <com.segamedev.bandros.BFormInputText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:b_formHint="Masukkan nama"
+            app:b_formName="Nama"
+            app:b_formHintColor="@android:color/darker_gray"
+            app:b_formNameColor="@color/colorAccent"
+            app:b_leftButtonShow="false"
+            app:b_rightButtonShow="true" />
+
+        <com.segamedev.bandros.BFormInputText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:b_formHint="Masukkan email"
+            app:b_formName="Email"
+            app:b_formInputType="email"
+            app:b_formHintColor="@android:color/darker_gray"
+            app:b_formNameColor="@color/colorAccent"
+            app:b_leftButtonShow="false"
+            app:b_rightButtonShow="true" />
+
+        <com.segamedev.bandros.BFormInputText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:b_formHint="Masukkan password"
+            app:b_formName="Password"
+            app:b_formInputType="password"
+            app:b_formHintColor="@android:color/darker_gray"
+            app:b_formNameColor="@color/colorAccent"
+            app:b_leftButtonShow="false"
+            app:b_rightButtonShow="true" />
+
+        <com.segamedev.bandros.BFormInputText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:b_formHint="Masukkan catatan"
+            app:b_formName="Catatan"
+            app:b_formInputType="textArea"
+            app:b_formHintColor="@android:color/darker_gray"
+            app:b_formNameColor="@color/colorAccent"
+            app:b_leftButtonShow="false"
             app:b_rightButtonShow="true" />
 
     </LinearLayout>
