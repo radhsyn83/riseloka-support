@@ -8,28 +8,28 @@ Add this to your dependencies.
 
 ```gradle
 dependencies {
-  implementation 'com.github.radhsyn83:bandros-lib:v1.1.8'
+  implementation 'com.github.radhsyn83:riseloka-support:v1.0.0'
 }
 ```
 
 # #Form Validation
 #### Function
 ```java
-BFormControl().formValidation(/*Context*/, /*ArrayList<FormValidationModel>*/, /*FormValidationListener*/)
+RiselokaFormControl().formValidation(/*Context*/, /*ArrayList<FormValidationModel>*/, /*FormValidationListener*/)
 ```
 #### Model
 ```java
-BFormModel(/*editText*/,/*Form Name*/,/*Min Length*/,/*Max Length*/,/*Form Type*/,/*editText(To confirm like re-password)*/)
+RiselokaFormModel(/*editText*/,/*Form Name*/,/*Min Length*/,/*Max Length*/,/*Form Type*/,/*editText(To confirm like re-password)*/)
 ```
 #### Form Type
 ```java
-BFormControl.TYPE_NORMAL
-BFormControl.TYPE_EMAIL
+RiselokaFormControl.TYPE_NORMAL
+RiselokaFormControl.TYPE_EMAIL
 ```
 #### Listener
 ```java
-BFormControl.OnFormControlListener{
-    override fun onFailed(errorModel: BFormModel, msg: String) {
+RiselokaFormControl.OnFormControlListener{
+    override fun onFailed(errorModel: RiselokaFormModel, msg: String) {
         // Invalid message here
     }
 
@@ -46,14 +46,14 @@ val phone = this.findViewById<EditText>(R.id.et_phone)
 val newPassword = this.findViewById<EditText>(R.id.et_new_password)
 val newPasswordVer = this.findViewById<EditText>(R.id.et_new_password_verification)
 
-val phoneCheck = BFormModel(newPassword,"Phone",3)
-val passwordCheck = BFormModel(newPassword,"Password",3,null,BFormControl.TYPE_NORMAL,newPasswordVer)
+val phoneCheck = RiselokaFormModel(newPassword,"Phone",3)
+val passwordCheck = RiselokaFormModel(newPassword,"Password",3,null,RiselokaFormControl.TYPE_NORMAL,newPasswordVer)
 
 //FORM VALIDATION
-BFormControl().init(ctx)
+RiselokaFormControl().init(ctx)
     .addForm(passwordCheck)
-    .listener(object : BFormControl.OnFormControlListener {
-        override fun onFailed(errorModel: BFormModel, msg: String) {
+    .listener(object : RiselokaFormControl.OnFormControlListener {
+        override fun onFailed(errorModel: RiselokaFormModel, msg: String) {
             //On Form invalid
             toast(msg)
             /*if phone empty will show "Phone cant be empty"*/
