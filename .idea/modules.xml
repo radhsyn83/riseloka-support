@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/bandros/bandros.iml" filepath="$PROJECT_DIR$/bandros/bandros.iml" />
       <module fileurl="file://$PROJECT_DIR$/bandros-lib.iml" filepath="$PROJECT_DIR$/bandros-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/bandros-lib.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/bandros-lib.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bandros/bandros-lib.riseloka.iml" filepath="$PROJECT_DIR$/.idea/modules/bandros/bandros-lib.riseloka.iml" />
     </modules>
   </component>
 </project>

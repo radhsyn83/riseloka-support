@@ -71,7 +71,7 @@ BFormControl().init(ctx)
 ![Image](https://github.com/radhsyn83/bandros-lib/blob/master/images/Example%20composite%20Form.png)
 
 ```java
-<com.segamedev.bandros.BFormInputText
+<com.segamedev.bandros.RiselokaFormInputText
     android:id="@+id/formInput"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

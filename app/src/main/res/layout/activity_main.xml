@@ -11,60 +11,60 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.segamedev.bandros.BFormInputText
+        <com.segamedev.riseloka.RiselokaFormInputText
             android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:b_formHint="Masukkan nomor hp"
-            app:b_formName="No. HP"
-            app:b_formInputType="phone"
-            app:b_formHintColor="@android:color/darker_gray"
-            app:b_formNameColor="@color/colorAccent"
-            app:b_leftButtonShow="false"
-            app:b_rightButtonShow="true" />
+            app:rfi_formHint="Masukkan nomor hp"
+            app:rfi_formName="No. HP"
+            app:rfi_formInputType="phone"
+            app:rfi_formHintColor="@android:color/darker_gray"
+            app:rfi_formNameColor="@color/colorAccent"
+            app:rfi_leftButtonShow="false"
+            app:rfi_rightButtonShow="true" />
 
-        <com.segamedev.bandros.BFormInputText
+        <com.segamedev.riseloka.RiselokaFormInputText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:b_formHint="Masukkan nama"
-            app:b_formName="Nama"
-            app:b_formHintColor="@android:color/darker_gray"
-            app:b_formNameColor="@color/colorAccent"
-            app:b_leftButtonShow="false"
-            app:b_rightButtonShow="true" />
+            app:rfi_formHint="Masukkan nama"
+            app:rfi_formName="Nama"
+            app:rfi_formHintColor="@android:color/darker_gray"
+            app:rfi_formNameColor="@color/colorAccent"
+            app:rfi_leftButtonShow="false"
+            app:rfi_rightButtonShow="true" />
 
-        <com.segamedev.bandros.BFormInputText
+        <com.segamedev.riseloka.RiselokaFormInputText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:b_formHint="Masukkan email"
-            app:b_formName="Email"
-            app:b_formInputType="email"
-            app:b_formHintColor="@android:color/darker_gray"
-            app:b_formNameColor="@color/colorAccent"
-            app:b_leftButtonShow="false"
-            app:b_rightButtonShow="true" />
+            app:rfi_formHint="Masukkan email"
+            app:rfi_formName="Email"
+            app:rfi_formInputType="email"
+            app:rfi_formHintColor="@android:color/darker_gray"
+            app:rfi_formNameColor="@color/colorAccent"
+            app:rfi_leftButtonShow="false"
+            app:rfi_rightButtonShow="true" />
 
-        <com.segamedev.bandros.BFormInputText
+        <com.segamedev.riseloka.RiselokaFormInputText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:b_formHint="Masukkan password"
-            app:b_formName="Password"
-            app:b_formInputType="password"
-            app:b_formHintColor="@android:color/darker_gray"
-            app:b_formNameColor="@color/colorAccent"
-            app:b_leftButtonShow="false"
-            app:b_rightButtonShow="true" />
+            app:rfi_formHint="Masukkan password"
+            app:rfi_formName="Password"
+            app:rfi_formInputType="password"
+            app:rfi_formHintColor="@android:color/darker_gray"
+            app:rfi_formNameColor="@color/colorAccent"
+            app:rfi_leftButtonShow="false"
+            app:rfi_rightButtonShow="true" />
 
-        <com.segamedev.bandros.BFormInputText
+        <com.segamedev.riseloka.RiselokaFormInputText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:b_formHint="Masukkan catatan"
-            app:b_formName="Catatan"
-            app:b_formInputType="textArea"
-            app:b_formHintColor="@android:color/darker_gray"
-            app:b_formNameColor="@color/colorAccent"
-            app:b_leftButtonShow="false"
-            app:b_rightButtonShow="true" />
+            app:rfi_formHint="Masukkan catatan"
+            app:rfi_formName="Catatan"
+            app:rfi_formInputType="textArea"
+            app:rfi_formHintColor="@android:color/darker_gray"
+            app:rfi_formNameColor="@color/colorAccent"
+            app:rfi_leftButtonShow="false"
+            app:rfi_rightButtonShow="true" />
 
     </LinearLayout>
 
