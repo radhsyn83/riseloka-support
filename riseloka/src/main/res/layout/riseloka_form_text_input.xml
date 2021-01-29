@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
+            android:gravity="center_vertical"
             android:background="@drawable/riseloka_form_background"
             android:orientation="horizontal">
 
@@ -41,8 +42,7 @@
                 android:background="@android:color/transparent"
                 android:hint="Hint"
                 android:maxLines="1"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
+                android:padding="10dp"
                 android:textColor="#000"
                 android:textSize="14sp" />
 

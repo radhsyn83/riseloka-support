@@ -21,7 +21,7 @@
             app:rfi_formHintColor="@android:color/darker_gray"
             app:rfi_formNameColor="@color/colorAccent"
             app:rfi_leftButtonShow="false"
-            app:rfi_rightButtonShow="true" />
+            app:rfi_rightButtonShow="false" />
 
         <com.segamedev.riseloka.RiselokaFormInputText
             android:layout_width="match_parent"
