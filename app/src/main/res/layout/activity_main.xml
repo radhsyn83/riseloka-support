@@ -18,6 +18,7 @@
             app:rfi_formHint="Masukkan nomor hp"
             app:rfi_formName="No. HP"
             app:rfi_formInputType="phone"
+            app:rfi_formReadOnly="true"
             app:rfi_formHintColor="@android:color/darker_gray"
             app:rfi_formNameColor="@color/colorAccent"
             app:rfi_leftButtonShow="false"

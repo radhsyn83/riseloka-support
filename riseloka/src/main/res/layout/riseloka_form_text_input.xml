@@ -46,6 +46,21 @@
                 android:textColor="#000"
                 android:textSize="14sp" />
 
+            <TextView
+                android:id="@+id/tv_form_input"
+                android:layout_width="0dp"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:gravity="top"
+                android:background="@android:color/transparent"
+                android:hint="Hint"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textColor="#000"
+                android:textSize="14sp" />
+
             <ImageView
                 android:id="@+id/iv_button_right"
                 android:layout_width="35dp"

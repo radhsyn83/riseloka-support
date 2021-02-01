@@ -21,7 +21,7 @@ import android.widget.TextView;
 public class RiselokaFormInputText extends LinearLayout {
 
     private static final int NOT_DEFINED = -777; //random number, not - 1 because it is WHITE
-    TextView tvFormName;
+    TextView tvFormName, tvFormInput;
     EditText etFormInput;
     ImageView ivLeftButton, ivRightButton;
     String mFormName;
@@ -75,7 +75,7 @@ public class RiselokaFormInputText extends LinearLayout {
             mRightButtonIcon = typedArray.getResourceId(com.segamedev.riseloka.R.styleable.RiselokaFormInputText_rfi_rightButtonIcon, com.segamedev.riseloka.R.drawable.riseloka_form_default_button_icon);
             mLeftButtonIconTint = typedArray.getColor(com.segamedev.riseloka.R.styleable.RiselokaFormInputText_rfi_leftButtonIconTint, NOT_DEFINED);
             mRightButtonIconTint = typedArray.getColor(com.segamedev.riseloka.R.styleable.RiselokaFormInputText_rfi_rightButtonIconTint, NOT_DEFINED);
-            mFormReadOnly = typedArray.getBoolean(R.styleable.RiselokaFormInputText_rfi_formReadOnly, true);
+            mFormReadOnly = typedArray.getBoolean(R.styleable.RiselokaFormInputText_rfi_formReadOnly, false);
             mFormInputType = typedArray.getString(R.styleable.RiselokaFormInputText_rfi_formInputType);
 
             typedArray.recycle();
@@ -89,6 +89,7 @@ public class RiselokaFormInputText extends LinearLayout {
         //Init View
         tvFormName = this.findViewById(com.segamedev.riseloka.R.id.tv_form_name);
         etFormInput = this.findViewById(com.segamedev.riseloka.R.id.et_form_input);
+        tvFormInput = this.findViewById(com.segamedev.riseloka.R.id.tv_form_input);
         ivLeftButton = this.findViewById(com.segamedev.riseloka.R.id.iv_button_left);
         ivRightButton = this.findViewById(com.segamedev.riseloka.R.id.iv_button_right);
 
@@ -103,12 +104,17 @@ public class RiselokaFormInputText extends LinearLayout {
         setFormReadOnly(mFormReadOnly);
         //Set Form Text
         etFormInput.setText(mText);
+        tvFormInput.setText(mText);
 
         //Set Form Hint
-        if (mFormHint != null)
+        if (mFormHint != null){
+            tvFormInput.setHint(mFormHint);
             etFormInput.setHint(mFormHint);
-        else
+        } else {
             etFormInput.setHint("Form Hint");
+            tvFormInput.setHint("Form Hint");
+        }
+
         setFormHintColor(mFormHintColor);
 
         //Set Left Button
@@ -159,6 +165,7 @@ public class RiselokaFormInputText extends LinearLayout {
     public void setFormHintColor(int color) {
         if (mFormHintColor != NOT_DEFINED) {
             etFormInput.setHintTextColor(color);
+            tvFormInput.setHintTextColor(color);
         }
     }
 
@@ -199,7 +206,13 @@ public class RiselokaFormInputText extends LinearLayout {
     }
 
     public void setFormReadOnly(Boolean isEnable) {
-        etFormInput.setEnabled(isEnable);
+        if (isEnable) {
+            etFormInput.setVisibility(View.GONE);
+            tvFormInput.setVisibility(View.VISIBLE);
+        } else {
+            etFormInput.setVisibility(View.VISIBLE);
+            tvFormInput.setVisibility(View.GONE);
+        }
     }
 
     public void setRightButtonIconTint(int color) {
@@ -214,6 +227,10 @@ public class RiselokaFormInputText extends LinearLayout {
 
     public EditText getFormInput() {
         return etFormInput;
+    }
+
+    public TextView getTextInput() {
+        return tvFormInput;
     }
 
     public TextView getFormTitle() {
